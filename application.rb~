@@ -28,5 +28,3 @@ format.atom { render :xml => atom_feed_for(bookmarks, title,
 end
 end
 end
-
-#This method renders a list 
