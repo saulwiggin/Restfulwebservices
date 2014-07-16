@@ -26,4 +26,9 @@ map.resources :calendar, :path_prefix => user_base
 ## Finally, two more contrller that are rooted beneath /v1
 
 # v1/recent => RecentController
-map.resources :recent, :
+map.resources :recent, :path_prefixc => base
+
+# /v1/uris => UrisController
+map.resources :uris, :path_prefix => base
+end
+
