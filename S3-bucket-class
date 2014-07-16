@@ -1,0 +1,18 @@
+# The bucket list.
+class Bucketlist
+include Authorized
+
+#fetch all the buckets this user has defined.
+def get
+buckets = []
+#GET the bucket list URI and read an XML document from it.
+doc = REXML::Document.new(open(HOST).read)
+
+# For every bucket...
+REXML::XPath.each(doc, "//bucket/Name") do |e|
+# ...create a new Bucket object and add it to the list.
+buckets << Bucket.new(e.text) if e.text
+end
+return buckets
+end
+end

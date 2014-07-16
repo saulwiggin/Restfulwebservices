@@ -1,0 +1,8 @@
+#An S3 object, associated with a bucket, conatining a value abnd metadata.
+class object
+include Authorized
+
+#The client can see which Bucket this Object is in.
+attr_reader :bucket
+
+# The client can read
