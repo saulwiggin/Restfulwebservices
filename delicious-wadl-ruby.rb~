@@ -12,7 +12,7 @@ username, password = ARGV
 delicious = WADL::Application.from_wadl(open("delicious.wadl"))
 
 #Give authentication infroamtion to the application
-service = delicious.v1.with_basic_auth(username, password)
+service = delicious.v1.with_baic_auth(username, password)
 
 begin
 # Find the "recent posts" functionality
@@ -24,5 +24,5 @@ recent_posts.get.representation.each_by_param('post') do |post|
     puts "#{post.attributes['description']}: #{post.attributes['href']}"
 end
 rescue WADL::Faults::AuthorizationRequired
-  puts "Invalid authentication infromation!"
+puts "Invalid autheication infromation!"
 end
